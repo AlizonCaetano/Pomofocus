@@ -2,7 +2,7 @@
 
 ## Desafio da Rocketseat sobre Javascript avançado.
 
-###O que é o Pomodoro?
+### O que é o Pomodoro?
 A técnica pomodoro tem o principio de manter uma alta concentração em um curto periodo de tempo, assim você não atinge o limite fisico a ponto de estar estressado(a) demais, realizando pausas estratégicas resultado numa performance de alto nivel.
 
 #### Resultado final <a href="https://pomofocus-alizoncaetano.vercel.app/"> Pomofocus - timer</a>
