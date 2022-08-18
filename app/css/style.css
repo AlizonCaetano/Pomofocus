@@ -263,10 +263,12 @@ body.drk-theme footer a:hover{
 
   .card-sound{
     margin: 1.6rem;
-  
     width: 11rem;
     height: 13rem;
+  }
   
+  .minutes, .seconds {
+    min-width: 15rem;
   }
 
 }
