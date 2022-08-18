@@ -42,7 +42,7 @@ body,
 .container{
   display: grid;
   place-content: center;
-  min-height: 100vh;
+  min-height: 95vh;
   width: 100vw;
   font-weight: 700;
 }
@@ -59,10 +59,25 @@ main{
   width: 80vw;
 }
 
-
+.minutes, .seconds {
+  text-align: center;
+  min-width: 16rem;
+}
 
 .sounds-cards-wrapper .card-sound{
   border-radius: 8px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.6rem;
+}
+
+footer a{
+  text-decoration: none;
 }
 
 /*timer e display*/
@@ -156,6 +171,17 @@ body.lgt-theme{
   background-color: var(--lgt-bg);
 }
 
+
+body.lgt-theme footer a{
+  color: var(--lgt-icon-fill);
+}
+
+body.lgt-theme footer a:hover{
+  text-decoration: none;
+  color: var(--lgt-bg-sound-card-hover);
+}
+
+
 /*DARK THEME*/
 .active,
 body.drk-theme.theme-btns svg:hover path{
@@ -193,6 +219,15 @@ body.drk-theme{
   background-color: var(--drk-bg);
 }
 
+body.drk-theme footer,
+body.drk-theme footer a {
+  color: var(--drk-icon-fill);
+}
+
+body.drk-theme footer a:hover{
+  text-decoration: none;
+  color: var(--drk-bg-sound-card-hover);
+}
 
 
 
