@@ -10,10 +10,13 @@ export default function Timer({ minutesDisplay, secondsDisplay, resetTimer }) {
     let minutes = Number(minutesDisplay.textContent)
     let minutesFiveAdded
 
-    if (minutes <= 90) {
+    if (minutes < 90) {
       minutesFiveAdded = Number(minutes + 5)
+    } else {
+      alert('O limite é de 90 min')
+      return
     }
-    updateTimerDisplay(String(minutesFiveAdded), secondsDisplay.textContent)
+    updateTimerDisplay(minutesFiveAdded, secondsDisplay.textContent)
   }
 
   function decMinutes() {
