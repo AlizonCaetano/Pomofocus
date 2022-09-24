@@ -116,6 +116,10 @@ footer a{
 
 /*sound cards*/
 
+.card-sound{
+  position: relative;
+}
+
 .sounds-cards-wrapper,
 .card-sound{
   display: flex;
@@ -131,7 +135,8 @@ footer a{
 
 .card-sound{
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
 
   margin: 1.6rem;
 
@@ -140,23 +145,33 @@ footer a{
 
 }
 
-input[type='range'] {
-  -webkit-appearance: none;
-  width: 8rem;
-  height: 8px;
-  
-
-  background: var(--drk-icon-fill);
+input[type='range']{
+  appearance: none;
+  width: 9rem;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.411);
   border-radius: 9999px;
-  background-image: linear-gradient(var(--lgt-icon-fill), var(--lgt-icon-fill));
-  
-  transform: rotateZ(270deg);
 }
 
-.input-range {
-  display: flex;
-  width: 60px;
-  justify-content: flex-end;
+
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-thumb{  
+  appearance: none;
+	width: 1.6rem;
+	height: 1.6rem;
+	border-radius: 50%;
+	background-color:var(--lgt-icon-fill);
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  appearance: none;
+	width: 1.6rem;
+	height: 1.6rem;
+  border-radius: 9999px;
 }
 
 
