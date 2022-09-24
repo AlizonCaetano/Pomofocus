@@ -1,3 +1,5 @@
+import { buttonPressAudio, kitchenTimer } from './sounds.js'
+
 export default function Timer({ minutesDisplay, secondsDisplay, resetTimer }) {
   let timerOut
 
@@ -10,10 +12,19 @@ export default function Timer({ minutesDisplay, secondsDisplay, resetTimer }) {
     let minutes = Number(minutesDisplay.textContent)
     let minutesFiveAdded
 
-    if (minutes <= 90) {
+    if (minutes < 90) {
       minutesFiveAdded = Number(minutes + 5)
+      if (minutes >= 85) {
+        minutesFiveAdded = Number(90)
+        secondsDisplay.textContent = String(0).padStart(2, '0')
+
+        updateTimerDisplay(minutesFiveAdded, secondsDisplay.textContent)
+      }
+    } else {
+      alert('O limite é de 90 min')
+      return
     }
-    updateTimerDisplay(String(minutesFiveAdded), secondsDisplay.textContent)
+    updateTimerDisplay(minutesFiveAdded, secondsDisplay.textContent)
   }
 
   function decMinutes() {
@@ -43,6 +54,10 @@ export default function Timer({ minutesDisplay, secondsDisplay, resetTimer }) {
       if (minutes < 0) {
         resetTimer()
         return false
+      }
+
+      if (minutes < 1 && seconds < 1) {
+        kitchenTimer.play()
       }
 
       updateTimerDisplay(minutes, String(seconds - 1))

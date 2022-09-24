@@ -1,6 +1,7 @@
 import ToggleTheme from './toggleTheme.js'
 import Controls from './controls.js'
 import Timer from './timer.js'
+import { buttonPressAudio, kitchenTimer } from './sounds.js'
 
 let lgtThemeBtn = document.querySelector('.theme-btn.lgt-theme-btn')
 let drkThemeBtn = document.querySelector('.theme-btn.drk-theme-btn')
@@ -29,80 +30,103 @@ const timer = Timer({
 })
 
 lgtThemeBtn.addEventListener('click', () => {
+  buttonPressAudio.play()
   theme.changeToLightTheme()
 })
 
 drkThemeBtn.addEventListener('click', () => {
+  buttonPressAudio.play()
   theme.changeToDarkTheme()
 })
 
 buttonPlay.addEventListener('click', () => {
+  buttonPressAudio.play()
   controls.play()
   timer.countdown()
 })
 
 buttonStop.addEventListener('click', () => {
+  buttonPressAudio.play()
   controls.stop()
   timer.reset()
 })
 
 buttonPause.addEventListener('click', () => {
+  buttonPressAudio.play()
   controls.pause()
   timer.hold()
 })
 
 buttonAddMinutes.addEventListener('click', () => {
+  buttonPressAudio.play()
   timer.addMinutes()
 })
 
 buttonDecMinutes.addEventListener('click', () => {
+  buttonPressAudio.play()
   timer.decMinutes()
 })
 
-//card actions
+//sound cards
 
-const forestCard = document.querySelector('.florest-sound')
+const forestCard = document.querySelector('.forest-sound')
 const rainCard = document.querySelector('.rain-sound')
 const voicesCard = document.querySelector('.voices-sound')
 const firepitCard = document.querySelector('.firepit-sound')
 
-const forest = new Audio('./app/assets/sounds/floresta.wav')
-const rain = new Audio('./app/assets/sounds/chuva.wav')
-const starbucks = new Audio('./app/assets/sounds/cafeteria.wav')
-const fire = new Audio('./app/assets/sounds/lareira.wav')
+const forestSound = document.querySelector('#forest')
+const rainSound = document.querySelector('#rain')
+const voicesSound = document.querySelector('#voices')
+const fireSound = document.querySelector('#fire')
 
 forestCard.addEventListener('click', () => {
   forestCard.classList.toggle('active')
+  buttonPressAudio.play()
+  isButtonActivated(forestCard, forestSound)
 
-  let activeCardIsTrue =
-    forestCard.classList.value == `card-sound florest-sound active`
-      ? forest.play().loop
-      : forest.pause()
+  let volumeForest = document.getElementById('volume-forest')
+  volumeForest.addEventListener('change', () => {
+    forestSound.volume = volumeForest.value / 100
+  })
 })
 
 rainCard.addEventListener('click', () => {
   rainCard.classList.toggle('active')
+  buttonPressAudio.play()
+  isButtonActivated(rainCard, rainSound)
 
-  let activeCardIsTrue =
-    rainCard.classList.value == `card-sound rain-sound active`
-      ? rain.play().loop
-      : rain.pause().loop
+  let volumeRain = document.getElementById('volume-rain')
+  volumeRain.addEventListener('change', () => {
+    rainSound.volume = volumeRain.value / 100
+  })
 })
 
 voicesCard.addEventListener('click', () => {
   voicesCard.classList.toggle('active')
+  buttonPressAudio.play()
+  isButtonActivated(voicesCard, voicesSound)
 
-  let activeCardIsTrue =
-    voicesCard.classList.value == `card-sound voices-sound active`
-      ? starbucks.play().loop
-      : starbucks.pause().loop
+  let volumeVoices = document.getElementById('volume-voices')
+  volumeVoices.addEventListener('change', () => {
+    voicesSound.volume = volumeVoices.value / 100
+  })
 })
 
 firepitCard.addEventListener('click', () => {
   firepitCard.classList.toggle('active')
+  buttonPressAudio.play()
+  isButtonActivated(firepitCard, fireSound)
 
-  let activeCardIsTrue =
-    firepitCard.classList.value == `card-sound firepit-sound active`
-      ? fire.play().loop
-      : fire.pause().loop
+  let volumeFire = document.getElementById('volume-fire')
+  volumeFire.addEventListener('change', () => {
+    fireSound.volume = volumeFire.value / 100
+  })
 })
+
+function isButtonActivated(button, sound) {
+  if (button.className.match('.active')) {
+    sound.play()
+  } else {
+    sound.pause()
+  }
+}

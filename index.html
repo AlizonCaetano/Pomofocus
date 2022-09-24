@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="pt-br">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -8,6 +8,10 @@
 
     <link
       href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Montserrat:wght@600&display=swap"
       rel="stylesheet"
     />
 
@@ -154,7 +158,21 @@
           </div>
         </div>
         <div class="sounds-cards-wrapper">
-          <div class="card-sound florest-sound">
+          <div class="card-sound forest-sound">
+            <div class="input-range">
+              <input
+                type="range"
+                id="volume-forest"
+                name="volume"
+                min="0"
+                max="100"
+              />
+              <audio
+                id="forest"
+                src="./app/assets/sounds/floresta.wav"
+                loop
+              ></audio>
+            </div>
             <svg
               width="45"
               height="56"
@@ -169,6 +187,16 @@
             </svg>
           </div>
           <div class="card-sound rain-sound">
+            <div class="input-range">
+              <input
+                type="range"
+                id="volume-rain"
+                name="volume"
+                min="0"
+                max="100"
+              />
+              <audio id="rain" src="./app/assets/sounds/chuva.wav" loop></audio>
+            </div>
             <svg
               width="53"
               height="56"
@@ -183,6 +211,20 @@
             </svg>
           </div>
           <div class="card-sound voices-sound">
+            <div class="input-range">
+              <input
+                type="range"
+                id="volume-voices"
+                name="volume"
+                min="0"
+                max="100"
+              />
+              <audio
+                id="voices"
+                src="./app/assets/sounds/cafeteria.wav"
+                loop
+              ></audio>
+            </div>
             <svg
               width="57"
               height="56"
@@ -197,6 +239,20 @@
             </svg>
           </div>
           <div class="card-sound firepit-sound">
+            <div class="input-range">
+              <input
+                type="range"
+                id="volume-fire"
+                name="volume"
+                min="0"
+                max="100"
+              />
+              <audio
+                id="fire"
+                src="./app/assets/sounds/lareira.wav"
+                loop
+              ></audio>
+            </div>
             <svg
               width="48"
               height="56"
@@ -213,6 +269,12 @@
         </div>
       </main>
     </div>
+    <footer>
+      <div>
+        ☕ Coded by
+        <a href="https://www.linkedin.com/in/alisoncaetano">Alison Caetano</a>
+      </div>
+    </footer>
 
     <script src="./app/js/index.js" type="module"></script>
   </body>
