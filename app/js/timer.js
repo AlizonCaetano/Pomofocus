@@ -27,34 +27,34 @@ export default function Timer({ minutesDisplay, secondsDisplay, resetTimer }) {
     updateTimerDisplay(minutesFiveAdded, secondsDisplay.textContent)
   }
 
-  function decMinutes() {
-    let minutes = Number(minutesDisplay.textContent)
-    let minutesFiveDecr
+    function decMinutes() {
+      let minutes = Number(minutesDisplay.textContent)
+      let minutesFiveDecr
 
-    if (minutes > 5) {
-      minutesFiveDecr = Number(minutes - 5)
-    } else {
-      return
+      if (minutes > 5) {
+        minutesFiveDecr = Number(minutes - 5)
+      } else {
+        return
+      }
+
+      updateTimerDisplay(String(minutesFiveDecr), secondsDisplay.textContent)
     }
 
-    updateTimerDisplay(String(minutesFiveDecr), secondsDisplay.textContent)
-  }
+    function countdown() {
+      timerOut = setTimeout(() => {
+        let minutes = Number(minutesDisplay.textContent)
+        let seconds = Number(secondsDisplay.textContent)
+        updateTimerDisplay(minutes, 0)
 
-  function countdown() {
-    timerOut = setTimeout(() => {
-      let minutes = Number(minutesDisplay.textContent)
-      let seconds = Number(secondsDisplay.textContent)
-      updateTimerDisplay(minutes, 0)
+        if (seconds <= 0) {
+          seconds = 60
+          minutes--
+        }
 
-      if (seconds <= 0) {
-        seconds = 60
-        minutes--
-      }
-
-      if (minutes < 0) {
-        resetTimer()
-        return false
-      }
+        if (minutes < 0) {
+          resetTimer()
+          return false
+        }
 
       if (minutes < 1 && seconds < 1) {
         kitchenTimer.play()
@@ -62,26 +62,27 @@ export default function Timer({ minutesDisplay, secondsDisplay, resetTimer }) {
 
       updateTimerDisplay(minutes, String(seconds - 1))
 
-      countdown()
-    }, 1000)
-  }
+        countdown()
+      }, 1000)
+    }
 
-  function reset() {
-    updateTimerDisplay(25, 0)
-    clearTimeout(timerOut)
-  }
+    function reset() {
+      updateTimerDisplay(25, 0)
+      clearTimeout(timerOut)
+    }
 
-  function hold() {
-    clearTimeout(timerOut)
-    return false
-  }
+    function hold() {
+      clearTimeout(timerOut)
+      return false
+    }
 
-  return {
-    updateTimerDisplay,
-    addMinutes,
-    decMinutes,
-    hold,
-    reset,
-    countdown
+    return {
+      updateTimerDisplay,
+      addMinutes,
+      decMinutes,
+      hold,
+      reset,
+      countdown
+    }
   }
 }

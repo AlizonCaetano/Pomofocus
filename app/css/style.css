@@ -61,6 +61,10 @@ main{
 
 .minutes, .seconds {
   text-align: center;
+<<<<<<< HEAD
+=======
+  min-width: 16rem;
+>>>>>>> fd1e186c3b3b713a477f92502ca6de876524b1f5
 }
 
 .sounds-cards-wrapper .card-sound{
@@ -212,6 +216,17 @@ body.lgt-theme footer a{
 }
 
 
+
+body.lgt-theme footer a{
+  color: var(--lgt-icon-fill);
+}
+
+body.lgt-theme footer a:hover{
+  text-decoration: none;
+  color: var(--lgt-bg-sound-card-hover);
+}
+
+
 /*DARK THEME*/
 body.drk-theme{
   background-color: var(--drk-bg);
@@ -245,6 +260,14 @@ body.drk-theme footer a {
   color: var(--drk-icon-fill);
 }
 
+<<<<<<< HEAD
+=======
+body.drk-theme footer,
+body.drk-theme footer a {
+  color: var(--drk-icon-fill);
+}
+
+>>>>>>> fd1e186c3b3b713a477f92502ca6de876524b1f5
 body.drk-theme footer a:hover{
   text-decoration: none;
   color: var(--drk-bg-sound-card-hover);
@@ -254,8 +277,11 @@ body.drk-theme footer a:hover{
 
 /*BREAKPOINTS*/
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> fd1e186c3b3b713a477f92502ca6de876524b1f5
 @media(min-width: 320px ){
   .theme-btns{
     right: 1rem;
@@ -268,21 +294,35 @@ body.drk-theme footer a:hover{
 
   .card-sound{
    
+<<<<<<< HEAD
     width: 15rem;
     height: 15rem;
+=======
+    width: 12rem;
+    height: 12rem;
+>>>>>>> fd1e186c3b3b713a477f92502ca6de876524b1f5
     margin: .8rem;
   }
 
   .sounds-cards-wrapper{
     height: 27rem;
     width: 35rem;
+<<<<<<< HEAD
   }
   
   .timer-display, .timer-controls {
     display: flex;
     align-items: center;
     justify-content: center;
+=======
+>>>>>>> fd1e186c3b3b713a477f92502ca6de876524b1f5
   }
+  
+  .timer-display, .timer-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 }
 
 @media(min-width: 375px ){
@@ -305,6 +345,7 @@ body.drk-theme footer a:hover{
   .card-sound{
     margin: 1rem;
   
+<<<<<<< HEAD
     width: 14rem;
     height: 14rem; 
   }
@@ -315,7 +356,15 @@ body.drk-theme footer a:hover{
 
   .timer-display, .timer-controls {
     justify-content: space-around;
+=======
+    width: 11rem;
+    height: 12rem; 
+>>>>>>> fd1e186c3b3b713a477f92502ca6de876524b1f5
   }
+
+  .minutes, .seconds {
+    min-width: 14rem;
+}
 
 }
 
@@ -336,12 +385,18 @@ body.drk-theme footer a:hover{
   }
 
   .card-sound{
+<<<<<<< HEAD
     width: 16rem;
     height: 16rem;
+=======
+    width: 14rem;
+    height: 14rem;
+>>>>>>> fd1e186c3b3b713a477f92502ca6de876524b1f5
   
   }
 
   .sounds-cards-wrapper{
+<<<<<<< HEAD
     height: 35rem;
     width: 45rem;
   }
@@ -352,6 +407,14 @@ body.drk-theme footer a:hover{
 
   .minutes, .seconds {
     min-width: 18rem;
+=======
+    height: 30rem;
+    width: 40rem;
+>>>>>>> fd1e186c3b3b713a477f92502ca6de876524b1f5
+  }
+
+  .timer-display, .timer-controls {
+    justify-content: space-evenly;
   }
 
 }
