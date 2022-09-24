@@ -84,5 +84,5 @@ export default function Timer({ minutesDisplay, secondsDisplay, resetTimer }) {
       reset,
       countdown
     }
-  }
+ 
 }
