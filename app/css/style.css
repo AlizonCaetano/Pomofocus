@@ -61,10 +61,7 @@ main{
 
 .minutes, .seconds {
   text-align: center;
-<<<<<<< HEAD
-=======
   min-width: 16rem;
->>>>>>> fd1e186c3b3b713a477f92502ca6de876524b1f5
 }
 
 .sounds-cards-wrapper .card-sound{
