@@ -61,7 +61,6 @@ main{
 
 .minutes, .seconds {
   text-align: center;
-  min-width: 16rem;
 }
 
 .sounds-cards-wrapper .card-sound{
@@ -257,12 +256,6 @@ body.drk-theme footer a {
   color: var(--drk-icon-fill);
 }
 
-
-body.drk-theme footer,
-body.drk-theme footer a {
-  color: var(--drk-icon-fill);
-}
-
 body.drk-theme footer a:hover{
   text-decoration: none;
   color: var(--drk-bg-sound-card-hover);
@@ -271,6 +264,8 @@ body.drk-theme footer a:hover{
 
 
 /*BREAKPOINTS*/
+
+
 
 @media(min-width: 320px ){
   .theme-btns{
@@ -283,6 +278,7 @@ body.drk-theme footer a:hover{
   }
 
   .card-sound{
+   
     width: 15rem;
     height: 15rem;
     margin: .8rem;
@@ -325,6 +321,7 @@ body.drk-theme footer a:hover{
 
   .card-sound{
     margin: 1rem;
+  
     width: 14rem;
     height: 14rem; 
   }
@@ -335,8 +332,6 @@ body.drk-theme footer a:hover{
 
   .timer-display, .timer-controls {
     justify-content: space-around;
-    width: 15rem;
-    height: 15rem; 
   }
 
   .minutes, .seconds {
@@ -364,6 +359,7 @@ body.drk-theme footer a:hover{
   .card-sound{
     width: 16rem;
     height: 16rem;
+  
   }
 
   .sounds-cards-wrapper{
@@ -377,8 +373,6 @@ body.drk-theme footer a:hover{
 
   .minutes, .seconds {
     min-width: 18rem;
-    height: 30rem;
-    width: 40rem;
   }
 
   .timer-display, .timer-controls {
