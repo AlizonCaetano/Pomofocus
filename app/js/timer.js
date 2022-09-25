@@ -53,13 +53,10 @@ export default function Timer({ minutesDisplay, secondsDisplay, resetTimer }) {
 
       if (minutes < 0) {
         resetTimer()
+        kitchenTimer.play()
+        
         return false
       }
-
-      if (minutes <= 0 && seconds <= 0) {
-        kitchenTimer.play()
-      }
-
       updateTimerDisplay(minutes, String(seconds - 1))
 
       countdown()
