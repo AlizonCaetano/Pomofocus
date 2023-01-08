@@ -133,6 +133,10 @@ footer a{
   width: 35rem;
 }
 
+.sounds-cards-wrapper div {
+    justify-content: center;
+}
+
 .card-sound{
   display: flex;
   flex-direction: column-reverse;
